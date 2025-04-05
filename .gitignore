@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
+*.pot
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and release
+*.exe
+*.msi
+*.dmg
+env/
+venv/
+Thumbs.db
