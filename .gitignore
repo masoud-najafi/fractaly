@@ -7,6 +7,9 @@ build/
 *.egg
 *.log
 *.pot
+*.c
+*.cpp
+*.h
 
 # IDE specific
 .vscode/

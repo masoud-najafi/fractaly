@@ -83,24 +83,20 @@ fractaly/
 │       ├── algorithms/     # Fractal implementations
 │       │   ├── __init__.py
 │       │   └── core1.py
-│       ├── core/     
+│       ├── core/     # Fractal implementations
 │       │   ├── fractal_maths.c
 │       │   └── test_fractal_maths.py
-│       ├── gui/  
+│       ├── gui/  # Rendering
 │       │   ├── __init__.py
 │       │   └── core2.py
-│       ├── icons/ 
-│       │   │
-│       │   └── mandel.png
-│       └── lib/       # Platform-specific libraries
+│       └── lib/       # Platform-specific
 │           ├── win64/
 │           │   └── fractal_maths.dll
 │           └── linux64/
 │               └── libfractal_maths.so
 │
 └── doc/                   # Documentation
-    └── images/
-        ├── index.md
+    └── images
         └── mandelbrot.png
 ```
 ## Build/installation hints
