@@ -1,4 +1,6 @@
 ﻿# Fractaly - Fractal Visualization Tool
+< to visualize md files you can use VS code and CTRL-SHIFT-V >
+< or preview it online at https://markdownlivepreview.com/ >
 
 ![Fractal Example](doc/images/mandelbrot.png)
 
@@ -35,6 +37,12 @@ python -m build
 #note that you have to install twine before: 'pip install twine'
 python -m twine upload --verbose dist/* 
 ```
+## create a new realse on github
+```bash
+git tag -a v1.0.0 -m "Initial release"
+git push origin --tags
+```
+
 
 ## Usage in Python
 ```python
