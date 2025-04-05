@@ -1,6 +1,6 @@
 ﻿# Fractaly - Fractal Visualization Tool
 
-![Fractal Example](docs/images/mandelbrot.png)
+![Fractal Example](doc/images/mandelbrot.png)
 
 A cross-platform application for generating and exploring fractal images.
 
@@ -32,6 +32,7 @@ app.MainLoop()
 python -m fractaly
 
 ## Git structure
+```
 fractaly/
 ├── .gitignore
 ├── LICENSE.txt
@@ -61,10 +62,9 @@ fractaly/
 │           └── linux64/
 │               └── libfractal_maths.so
 │
-└── docs/                   # Documentation
+└── doc/                   # Documentation
     └── tutorial.md
-
-
+```
 ##Build/installation
 
 Key Techniques Used
