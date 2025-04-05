@@ -9,13 +9,27 @@ A cross-platform application for generating and exploring fractal images.
 - Interactive zoom/pan
 - Custom color schemes
 
-## Installation
+##downlod
+use can directly install fractaly from PyPI 
+https://pypi.org/project/fractaly/
+```bash
+pip install fractaly     #install fractaly
+pip uninstall fractaly   #uninstall fractaly
+```
+
+## Install the full source code from github
 ```bash
 git clone https://github.com/masoud-najafi/fractaly
 cd fractaly
-pip install -e .  # in development mode
-#or
-pip install  .    # in production mode
+#instal in development mode 
+pip install -e . 
+#or install in production mode
+pip install  .  
+
+#if you need to build the code
+python -m build
+#to publish it on PyPI
+python -m twine upload --verbose dist/* 
 ```
 
 ## Usage in Python
@@ -29,7 +43,9 @@ app.MainLoop()
 ```
 
 ## usage using Python entry point
+```bash
 python -m fractaly
+```
 
 ## Git structure
 ```
@@ -67,32 +83,32 @@ fractaly/
 ```
 ##Build/installation
 
-Key Techniques Used
-Underscore prefix:
-1)_internal directory name indicates it's private
-2)_PrivateClass name indicates it's internal
+Key Techniques Used<br>
+Underscore prefix:<br>
+1)_internal directory name indicates it's private<br>
+2)_PrivateClass name indicates it's internal<br>
+<br>
+Controlled exports:<br>
+1)__all__ in root __init__.py specifies what gets imported with from package import *<br>
+2)Only explicitly import the public class in root __init__.py<br>
+<br>
+Python module system:<br>
+1)The package structure naturally hides implementation details<br>
+2)Internal imports use relative imports (.internal)<br>
+<br>
 
-Controlled exports:
-1)__all__ in root __init__.py specifies what gets imported with from package import *
-2)Only explicitly import the public class in root __init__.py
-
-Python module system:
-1)The package structure naturally hides implementation details
-2)Internal imports use relative imports (.internal)
-
-
-Version synchronization: Keep __version__, setup.py version, and pyproject.toml version in sync.
-
-Type checking: The empty py.typed file indicates to type checkers (like mypy) that your package has type information.
-
-Modern vs traditional:
-pyproject.toml is the modern standard (PEP 621)
-setup.py is still widely used and may be needed for some cases
-
-Installation:
-For development: pip install -e .
-For production: pip install .
-
-Publishing:
-Build: python -m build
-Upload to PyPI: twine upload dist/*
+Version synchronization: Keep __version__, setup.py version, and pyproject.toml version in sync.<br>
+<br>
+Type checking: The empty py.typed file indicates to type checkers (like mypy) that your package has type information.<br>
+<br>
+Modern vs traditional:<br>
+pyproject.toml is the modern standard (PEP 621)<br>
+setup.py is still widely used and may be needed for some cases<br>
+<br>
+Installation:<br>
+For development: pip install -e .<br>
+For production: pip install .<br>
+<br>
+Publishing:<br>
+Build: python -m build<br>
+Upload to PyPI: twine upload dist/*<br>
