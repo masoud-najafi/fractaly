@@ -1,4 +1,4 @@
-﻿# Fractaly - Fractal Visualization Tool
+# Fractaly - Fractal Visualization Tool
 
 ![Fractal Example](docs/images/mandelbrot.png)
 
@@ -11,12 +11,10 @@ A cross-platform application for generating and exploring fractal images.
 
 ## Installation
 ```bash
-git clone https://github.com/masoud-najafi/fractaly
 cd fractaly
-pip install -e .  # in development mode
-#or
-pip install  .    # in production mode
+pip install -e . 
 ```
+
 
 ## Usage in Python
 ```python
@@ -28,41 +26,42 @@ frame.Show()
 app.MainLoop()
 ```
 
-## usage using Python entry point
+## usage using entry Python entry point
 python -m fractaly
+
 
 ## Git structure
 fractaly/
-├── .gitignore
-├── LICENSE.txt
-├── README.md
-├── pyproject.toml          # Build system config
-├── setup.py         
-├── setup_cx_Freeze.py          
-├── requirements.txt  # Dev dependencies and # product Runtime dependencies
-│
-├── src/                    # Application source
-│   └── fractaly/
-│       ├── py.typed
-│       ├── __init__.py
-│       ├── __main__.py
-│       ├── algorithms/     # Fractal implementations
-│       │   ├── __init__.py
-│       │   └── core1.py
-│       ├── core/     # Fractal implementations
-│       │   ├── fractal_maths.c
-│       │   └── test_fractal_maths.py
-│       ├── gui/  # Rendering
-│       │   ├── __init__.py
-│       │   └── core2.py
-│       └── lib/       # Platform-specific
-│           ├── win64/
-│           │   └── fractal_maths.dll
-│           └── linux64/
-│               └── libfractal_maths.so
-│
-└── docs/                   # Documentation
-    └── tutorial.md
+??? .gitignore
+??? LICENSE.txt
+??? README.md
+??? pyproject.toml          # Build system config
+??? setup.py         
+??? setup_cx_Freeze.py          
+??? requirements.txt  # Dev dependencies and # product Runtime dependencies
+?
+??? src/                    # Application source
+?   ??? fractaly/
+?       ??? py.typed
+?       ??? __init__.py
+?       ??? __main__.py
+?       ??? algorithms/     # Fractal implementations
+?       ?   ??? __init__.py
+?       ?   ??? core1.py
+?       ??? core/     # Fractal implementations
+?       ?   ??? fractal_maths.c
+?       ?   ??? test_fractal_maths.py
+?       ??? gui/  # Rendering
+?       ?   ??? __init__.py
+?       ?   ??? core2.py
+?       ??? lib/       # Platform-specific
+?           ??? win64/
+?           ?   ??? fractal_maths.dll
+?           ??? linux64/
+?               ??? libfractal_maths.so
+?
+??? docs/                   # Documentation
+    ??? tutorial.md
 
 
 ##Build/installation
