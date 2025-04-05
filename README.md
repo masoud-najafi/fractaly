@@ -9,8 +9,8 @@ A cross-platform application for generating and exploring fractal images.
 - Interactive zoom/pan
 - Custom color schemes
 
-##downlod
-use can directly install fractaly from PyPI 
+## Install from PyPI
+You can directly install fractaly from PyPI 
 https://pypi.org/project/fractaly/
 ```bash
 pip install fractaly     #install fractaly
@@ -19,16 +19,20 @@ pip uninstall fractaly   #uninstall fractaly
 
 ## Install the full source code from github
 ```bash
-git clone https://github.com/masoud-najafi/fractaly
+git clone https://github.com/masoud-najafi/fractaly.git
 cd fractaly
 #instal in development mode 
 pip install -e . 
 #or install in production mode
 pip install  .  
 
-#if you need to build the code
-python -m build
-#to publish it on PyPI
+#to build the project and create a new *.whl or *.gz,  use the build command. 
+#this command uses pyproject.toml file to build the packages.
+#if you do not have 'build', install it: 'pip install build'
+python -m build  
+
+#to publish the new package on PyPI
+#note that you have to install twine before: 'pip install twine'
 python -m twine upload --verbose dist/* 
 ```
 
@@ -81,7 +85,7 @@ fractaly/
 └── doc/                   # Documentation
     └── tutorial.md
 ```
-##Build/installation
+## Build/installation hints
 
 Key Techniques Used<br>
 Underscore prefix:<br>
@@ -89,15 +93,15 @@ Underscore prefix:<br>
 2)_PrivateClass name indicates it's internal<br>
 <br>
 Controlled exports:<br>
-1)__all__ in root __init__.py specifies what gets imported with from package import *<br>
-2)Only explicitly import the public class in root __init__.py<br>
+1) ```__all_```_ in root ```__init__.py``` specifies what gets imported with from package import *<br>
+2) Only explicitly import the public class in root ```__init__.py```<br>
 <br>
 Python module system:<br>
-1)The package structure naturally hides implementation details<br>
-2)Internal imports use relative imports (.internal)<br>
+1) The package structure naturally hides implementation details<br>
+2) Internal imports use relative imports (.internal)<br>
 <br>
 
-Version synchronization: Keep __version__, setup.py version, and pyproject.toml version in sync.<br>
+Version synchronization: Keep ```__version__, setup.py``` version, and pyproject.toml version in sync.<br>
 <br>
 Type checking: The empty py.typed file indicates to type checkers (like mypy) that your package has type information.<br>
 <br>
