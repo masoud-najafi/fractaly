@@ -67,6 +67,9 @@ python -m fractaly
 ## Git structure
 ```
 fractaly/
+├── .github/                # GitHub-specific files
+│   └── workflows/
+│       └── tests.yml
 ├── .gitignore
 ├── LICENSE.txt
 ├── README.md
@@ -100,8 +103,15 @@ fractaly/
 │
 └── doc/                   # Documentation
     └── images/
-        ├── index.md
-        └── mandelbrot.png
+    │   ├── index.md
+    │   └── mandelbrot.png
+    ├── licenses.md
+    ├── CONTRIBUTING.md
+    └── API_REFERENCE.md
+    ├── tutorial.md
+    └── api/
+        └── reference.md
+
 ```
 ## Build/installation hints
 
