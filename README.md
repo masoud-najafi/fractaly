@@ -157,3 +157,39 @@ For production: ```pip install .```<br>
 Publishing:<br>
 Build: ```python -m build```<br>
 Upload to PyPI: ```twine upload dist/*```<br>
+
+
+
+
+## upload a new relase using GithubCLI (Github Command Line Interface)
+# To upload files smaller than 100MB
+
+``` bash  
+winget install --id GitHub.cli  # install Github CLI and restrat the shell
+gh auth login  # give your Gitub token
+gh release create v1.0.0 path/to/your/file.exe --title "v1.0.0" --notes "First Windows build"
+```
+
+# To add another executable or any file to an existing realse
+``` bash  
+gh release upload v1.0.0 path/to/your/file.exe --repo masoud-najafi/fractaly
+
+```
+
+
+# LFS: to upload  a large file (LFS) to an existing frealse
+```
+git lfs install
+git lfs track "fractaly.exe"  #This adds an entry to .gitattributes.
+git add .gitattributes
+git add fractaly.exe
+git commit -m "Add large binary for v1.0.0"
+git tag v1.0.0
+git push origin main
+git push origin v1.0.0
+
+git lfs ls-files # see the LFS files
+git lfs status
+git lfs track
+
+```
