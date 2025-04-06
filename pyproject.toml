@@ -28,14 +28,23 @@ authors = [
     {name = "Masoud NAJAFI", email = "your.email@example.com"},
 ]
 description = "A package for creation and display three fractal types"
-readme = "README.md"
-requires-python = ">=3.7"
-license = { text = "MIT" }
+
+readme = {file = "README.txt", content-type = "text/markdown"}
+
+requires-python = ">=3.7a"
+
+license = { text = "MIT AND BSD-2-Clause)" }
+license-files = ["LICENSE.md", "doc/used_licenses.md", "doc/CONTRIBUTING.md"]
+
+keywords = ["simulation", "modeling", "FMU", "FMI", "SSP"]
+
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
     "Typing :: Typed",
 ]
+
 dependencies = [
      "wxPython>=4.2.1",
      "numpy>=1.26.0",
@@ -47,17 +56,16 @@ dependencies = [
 #docs = ["sphinx", "furo"]
 
 #[project.scripts]
-#fractaly = "fractaly.gui.wx.main:run_app"  # Point d'entree CLI
-#fractaly lancera l'application
+#fractaly-cli = "fractaly:main_cli" #executing the command is equal to: import sys; from fractaly import main_cli; sys.exit(main_cli()).  
 
-#[project.gui-scripts]
-#fractaly-gui = "fractaly.gui.wx.main:run_app"  # Point d'entree GUI
-#fractaly-gui lancera a'application gui
+#[project.gui-scripts] 
+#fractaly-gui = "fractaly.gui.wx.main:run_gui"  # Point d'entree GUI without poping up the shell terminal 
 
 [project.urls]
-Homepage = "https://github.com/masoud-najafi/fractaly-project"
-Documentation = "https://docs.example.com"
-Repository = "https://github.com/masoud-najafi/fractaly-project"
+Homepage = "https://github.com/masoud-najafi/fractaly"
+Documentation = "https://github.com/masoud-najafi/fractaly/doc"
+Repository = "https://github.com/masoud-najafi/fractaly"
+Issues = "https://github.com/masoud-najafi/fractaly/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}  # If using src layout

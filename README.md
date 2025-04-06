@@ -28,8 +28,16 @@ cd fractaly
 pip install -e . 
 #or install in production mode
 pip install  .  
+```
 
-#to build the project and create a new *.whl or *.gz,  use the build command. 
+## installation test
+```bash
+python -c "import fractaly"
+```
+
+##  create *.whl *.gz packages and upload to PyPI
+
+```bash
 #this command uses pyproject.toml file to build the packages.
 #if you do not have 'build', install it: 'pip install build'
 python -m build  
@@ -40,8 +48,25 @@ python -m twine upload --verbose dist/*
 ```
 ## create a new realse on github
 ```bash
-git tag -a v1.0.0 -m "Initial release"
+git tag -a v1.0.0 -m "Initial release v1.0.0"
 git push origin --tags
+```
+
+## to create a windows a build and a windows executable
+```bash
+python setup_cx_freeze.py build  # creates a build folder with all executable and necessary DLLs and python files.
+python setup_cx_freeze.py bdist_msi  #builds and create a *.msi file
+```
+
+# upload a new relase using GithubCLI (Github Command Line Interface)
+
+## To upload files smaller than 100MB
+
+``` bash  
+winget install --id GitHub.cli  # install (gh) Github CLI and restrat the shell
+gh auth login  # give your Gitub token
+gh release create v1.0.0 path/to/your/file1.exe --title "v1.0.0" --notes "First Windows build"
+gh release upload v1.0.0 path/to/your/file2.exe --repo masoud-najafi/fractaly  # To add another file to an existing release
 ```
 
 
@@ -55,10 +80,7 @@ frame.Show()
 app.MainLoop()
 ```
 
-## installation test
-```
-python -c "import fractaly"
-```
+
 
 ## usage using Python entry point
 ```bash
@@ -161,35 +183,6 @@ Upload to PyPI: ```twine upload dist/*```<br>
 
 
 
-## upload a new relase using GithubCLI (Github Command Line Interface)
-# To upload files smaller than 100MB
-
-``` bash  
-winget install --id GitHub.cli  # install Github CLI and restrat the shell
-gh auth login  # give your Gitub token
-gh release create v1.0.0 path/to/your/file.exe --title "v1.0.0" --notes "First Windows build"
-```
-
-# To add another executable or any file to an existing realse
-``` bash  
-gh release upload v1.0.0 path/to/your/file.exe --repo masoud-najafi/fractaly
-
-```
-
-
-# LFS: to upload  a large file (LFS) to an existing frealse
-```
-git lfs install
-git lfs track "fractaly.exe"  #This adds an entry to .gitattributes.
-git add .gitattributes
-git add fractaly.exe
-git commit -m "Add large binary for v1.0.0"
-git tag v1.0.0
-git push origin main
-git push origin v1.0.0
-
-git lfs ls-files # see the LFS files
-git lfs status
-git lfs track
-
-```
+# publish using release.yml
+#https://medium.com/@blackary/publishing-a-python-package-from-github-to-pypi-in-2024-a6fb8635d45d
+https://pypi.org/manage/account/publishing/
