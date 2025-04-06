@@ -3,7 +3,7 @@
 <!--- a comment -->
 
 # Fractaly - Fractal Visualization Tool
-![Fractal Example](doc/images/mandelbrot.png)
+![Fractal Example](doc/images/fractaly.png)
 
 A cross-platform application for generating and exploring fractal images.
 
@@ -114,6 +114,18 @@ fractaly/
         └── reference.md
 
 ```
+
+
+## sample images
+# Mandelbrot
+![Fractal Mandelbrot](doc/images/mandelbrot.png)
+
+# Julia
+![Fractal Julia](doc/images/julia.png)
+
+# Sierpinski
+![Fractal Sierpinski](doc/images/sierpinski.png)
+
 ## Build/installation hints
 
 Key Techniques Used<br>
