@@ -32,7 +32,7 @@ pip install  .
 
 ## installation test
 ```bash
-python -c "import fractaly"
+python -c "import fractaly,wx;app=wx.App(False);frame=fractaly.FractalFrame();frame.Show();app.MainLoop()"
 ```
 
 ##  create *.whl *.gz packages and upload to PyPI
