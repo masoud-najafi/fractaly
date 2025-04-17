@@ -2,17 +2,16 @@ import wx, os, ctypes, sys
 import wx.lib.colourselect as csel
 import math
 import random
-from ..gui.core2 import _FractalCanvas
+from fractaly.gui.core2 import _FractalCanvas
 from pathlib import Path
 
 def get_library_path():
-    package_dir = Path(__file__).parent
-    if sys.platform == "win32":
-        return os.path.join(package_dir,"..","lib","win64","fractal_maths.dll")
-    elif sys.platform == "linux":
-        return os.path.join(package_dir,"..","lib","linux64","fractal_maths.so")
-    else:
-        raise NotImplementedError("Unsupported platform")
+   if getattr(sys, 'frozen', False):
+      pexec= os.path.dirname(sys.executable)
+      return os.path.join(pexec,"src","fractaly")
+   else:
+      package_dir = Path(__file__).parent
+      return  os.path.join(package_dir,"..")
 
 class FractalFrame(wx.Frame):
     def __init__(self):
@@ -21,10 +20,14 @@ class FractalFrame(wx.Frame):
         # Create the main panel
         panel = wx.Panel(self)
         sizer = wx.BoxSizer(wx.VERTICAL)
-        
         try:
-          dll_path=get_library_path()
-          print("dllPath=", dll_path)
+          package_dir=get_library_path()
+          if sys.platform == "win32":
+              dll_path= os.path.join(package_dir,"lib","win64","fractal_maths.dll")
+          elif sys.platform == "linux":
+             dll_path= os.path.join(package_dir,"lib","linux64","libfractal_maths.so")
+          else:
+            raise NotImplementedError("Unsupported platform")
           my_dll = ctypes.CDLL(dll_path)
           my_dll.adder.argtypes = [ctypes.c_int32, ctypes.c_int32]
           my_dll.adder.restype = ctypes.c_int32
@@ -194,8 +197,11 @@ class FractalFrame(wx.Frame):
         self.zoom_slider.SetValue(int(self.canvas.zoom * 10))
         self.canvas.generate_fractal()
 
-#if __name__ == "__main__":
- #   app = wx.App(False)
-  #  frame = FractalFrame()
-   # frame.Show()
-   # app.MainLoop()
+def maincaller():
+    app = wx.App(False)
+    frame = FractalFrame()
+    frame.Show()
+    app.MainLoop()
+
+if __name__ == "__main__":
+    maincaller()
