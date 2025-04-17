@@ -17,9 +17,6 @@ base = None
 if sys.platform == "win32":
     base = "Win32GUI"  # Use this for Windows GUI apps to prevent console window
 
-# List of your main Python files
-main_script = "src/fractaly/__main__.py"  # Adjust to your main entry point
-
 # Include files (images, data, etc.)
 include_files = [
     ("src/", "src/"),  # If you have asset files
@@ -34,12 +31,13 @@ packages = [
 # Build options
 build_options = {
     "packages": packages,
-    "excludes": ["tkinter"],  # Exclude unnecessary packages
+    "excludes": ["tkinter","pip"],  # Exclude unnecessary packages
     "include_files": include_files,
     "optimize": 2,
     # Binary includes (for special libraries)
-    "bin_includes": [    "libfreetype.so.6",     "zlib1.dll"     ],
+    #"bin_includes": [    "libfreetype.so.6",     "zlib1.dll"     ],
     #"environment_variables":[("PATH", "lib/", "PREPEND")]  # Add lib/ to PATH 
+    "path": sys.path + ["src"],
 }
 
 if sys.platform == "win32":
@@ -49,10 +47,10 @@ if sys.platform == "win32":
 # Executable configuration
 executables = [
     Executable(
-        main_script,
+        "src/fractaly/algorithm/core1.py", # Adjust to your main entry point
         base=base,
         target_name="fractaly",
-        icon="fractaly/icons/mandel.png" if sys.platform == "win32EE" else None,
+        icon="src/fractaly/icons/mandel.png" if sys.platform == "win32" else None,
         shortcut_name=f"{project_name} {version}",
         shortcut_dir="ProgramMenuFolder",
     )
