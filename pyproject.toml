@@ -55,10 +55,7 @@ dependencies = [
 #docs = ["sphinx", "furo"]
 
 [project.scripts]
-#myPP = "myPP.A.main:show_message_box"
-fractaly="fractaly.algorithm.core1:maincaller"
-
-#fractaly-cli = "fractaly:main_cli" #executing the command is equal to: import sys; from fractaly import main_cli; sys.exit(main_cli()).  
+fractaly="fractaly.algorithm.core1:maincaller" #executing the command is equal to: import sys; from fractaly import main_cli; sys.exit(main_cli()).  
 
 #[project.gui-scripts] 
 #fractaly-gui = "fractaly.gui.wx.main:run_gui"  # Point d'entree GUI without poping up the shell terminal 
