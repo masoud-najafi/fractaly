@@ -12,6 +12,15 @@ A cross-platform application for generating and exploring fractal images.
 - Interactive zoom/pan
 - Custom color schemes
 
+## test the fractaly package
+```bash
+pip uninstall fractaly  # to be sure fractaly is not installed
+cd parent_folder_of_fractaly_package
+python -c "import fractaly"
+```
+
+
+
 ## Install from PyPI
 You can directly install fractaly from PyPI 
 https://pypi.org/project/fractaly/
@@ -30,8 +39,9 @@ pip install -e .
 pip install  .  
 ```
 
-## installation test
+## pip installation test
 ```bash
+cd somewhere
 python -c "import fractaly"
 ```
 

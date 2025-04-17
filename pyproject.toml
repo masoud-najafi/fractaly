@@ -33,8 +33,7 @@ readme = {file = "README.txt", content-type = "text/markdown"}
 
 requires-python = ">=3.7a"
 
-license = { text = "MIT AND BSD-2-Clause)" }
-license-files = ["LICENSE.md", "doc/used_licenses.md", "doc/CONTRIBUTING.md"]
+license = {file= "LICENSE.md" , content-type = "text/markdown"}
 
 keywords = ["simulation", "modeling", "FMU", "FMI", "SSP"]
 
@@ -55,7 +54,10 @@ dependencies = [
 #dev = ["black", "flake8", "mypy", "ipython"]
 #docs = ["sphinx", "furo"]
 
-#[project.scripts]
+[project.scripts]
+#myPP = "myPP.A.main:show_message_box"
+fractaly="fractaly.algorithm.core1:maincaller"
+
 #fractaly-cli = "fractaly:main_cli" #executing the command is equal to: import sys; from fractaly import main_cli; sys.exit(main_cli()).  
 
 #[project.gui-scripts] 
